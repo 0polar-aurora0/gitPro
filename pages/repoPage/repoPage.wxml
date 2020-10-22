@@ -1,0 +1,64 @@
+<!--pages/repoPage/repoPage.wxml-->
+<block wx:if="{{ isRepoData == true}}">
+  <view class="allInfo">
+    <view class="mainInfo">
+      <view class="userInfo">
+        <image alt="{{ repoData.owner.login }}" src="{{ repoData.owner.avatar_url }}"></image>
+        <view class="textInfo">
+          <a href="{{ repoData.full_name }}">{{ repoData.full_name }}</a>
+          <text> {{repoData.description}} </text>
+        </view>
+      </view>
+      <view class="repoInfo">
+        <view bindtap="toWatchsPage">
+          <text>{{ repoData.watchers }}</text>
+          <text>Watches</text>
+        </view>
+        <view >
+          <text>{{ repoData.stargazers_count }}</text>
+          <text>Stars</text>
+        </view>
+        <view>
+          <text>{{ repoData.forks }}</text>
+          <text>Forks</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="otherInfo-1 otherInfo">
+        <view>
+          <image src="../../images/email.png"></image>
+          <text>{{  repoData.language }}</text>
+        </view>
+        <view>
+          <image src="../../images/email.png"></image>
+          <text>Activity</text>
+        </view>
+        <view>
+          <image src="../../images/email.png"></image>
+          <text>Issues</text>
+        </view>
+        <view>
+          <image src="../../images/email.png"></image>
+          <text>License</text>
+        </view>
+    </view>
+
+    <view class="otherInfo-2 otherInfo">
+      <view>
+        <image src="../../images/email.png"></image>
+        <text>Commits</text>
+      </view>
+      <view >
+        <image src="../../images/email.png"></image>
+        <text>Contributors</text>
+      </view>
+      <view>
+        <image src="../../images/email.png"></image>
+        <text>Readme</text>
+      </view>
+      
+    </view>
+
+  </view>
+</block>

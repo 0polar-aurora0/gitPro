@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/preLoading/preLoading",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/my/my",
+    "pages/login/login",
+    "pages/test/test",
+    "pages/web_view/web_view",
+    "pages/OtherUserPage/OtherUserPage",
+    "pages/OtherUserListPage/OtherUserListPage",
+    "pages/repoPage/repoPage",
+    "pages/repoListPage/repoListPage"
+  ],
+  "window":{
+    
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#1F0510",
+    "navigationBarTitleText": "GitHub",
+    "navigationBarTextStyle":"white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#EF963B",
+    "list": [
+    {
+      "pagePath": "pages/index/index",
+      "text": "Trending",
+      "iconPath": "images/trending.png",
+      "selectedIconPath": "images/trending_select.png"
+    },
+    {
+      "pagePath": "pages/test/test",
+      "text": "starred",
+      "iconPath": "images/starred.png",
+      "selectedIconPath": "images/starred_select.png"
+    },
+    {
+      "pagePath": "pages/my/my",
+      "text": "Me",
+      "iconPath": "images/my.png",
+      "selectedIconPath": "images/my_select.png"
+    }
+  ]
+  }
+}

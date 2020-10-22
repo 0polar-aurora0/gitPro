@@ -1,0 +1,49 @@
+<!--pages/login/login.wxml-->
+<view class="loginPage">
+
+  <image src="../../images/github.png"></image>
+  <text>Welcon to Github</text>
+
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">密码</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">token</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">Client ID</view>
+  </view>
+  
+  <swiper current="{{currentTab}}" style="height:{{winHeight / 2 - 37}}px"  class="swiper-box" duration="300"  bindchange="swiperChange">
+
+        <swiper-item>
+          <view class="login-area">
+            <form bindsubmit="credentials_formSubmit" class="credentials-form" action="" method="post">
+              <input name="credentials_username" class="credentials-username input-css1" focus="true" type="text" placeholder="帐号" />
+              <input name="credentials_password" class="credentials-password input-css1" password type="text" placeholder="密码" />
+              <button class="credentials-btn btn-css1" type="primary" form-type="submit" plain="true">登录</button>
+            </form>   
+          </view>
+        </swiper-item>
+        
+        <swiper-item>
+          <view class="login-area">
+            <form bindsubmit="access_token_formSubmit" class="login-form" action="" method="post">
+              <input name="access_token" class="access-token input-css1" password type="text" placeholder="使用token登录" />
+              <button class="access-token-btn btn-css1" type="primary" form-type="submit" plain="true">登录</button>
+            </form>   
+          </view>
+        </swiper-item>
+
+        <swiper-item>
+          <view class="login-area">
+            <form bindsubmit="client_formSubmit"  bindreset="formReset" class="login-form" action="" method="post">
+              <input name="client_id" class="input-css1" type="submit"  placeholder="Client ID" />
+              <input name="client_secret" class="input-css1" password type="submit" placeholder="Client Secret" />
+              <button form-type="submit" class="btn-css1" type="primary" plain="true" bindtap="href_skip">登录</button>
+            </form>   
+          </view>
+        </swiper-item>
+  </swiper>
+
+  <view class="login-tail">
+    欢迎登录GitHub，帐号密码将保存在本地服务器
+  </view>
+
+</view>

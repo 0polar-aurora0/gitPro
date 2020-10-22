@@ -1,0 +1,10 @@
+<!--pages/OtherUserListPage/OtherUserListPage.wxml-->
+<view class=" OtherUserList ">
+  <view bindtap="toOtherUserPage" data-login="{{ item.login }}" class="List" wx:key="{{ OtherUserList.login }}" wx:for="{{ OtherUserList }}">
+    <image src="{{ item.avatar_url }}"></image>
+    <!-- <text>{{ index }}</text> -->
+    <text>{{ item.login }}</text>
+    <!-- <text>{{ item.id }}</text>
+    <text>{{ item.node_id }}</text> -->
+  </view>
+</view>

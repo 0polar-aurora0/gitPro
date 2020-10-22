@@ -1,0 +1,54 @@
+<!--index.wxml-->
+<view class="mainPanel">
+  <image src="../../images/aurora.png"></image>
+</view>
+<view class="search" style="top:{{ searchTop }}px">
+  <view class="searchArea" style="height:{{ searchHeight }}px">
+    <input placeholder-class="placeholder" type="text" name="projectSeach" placeholder="Dream Starts Here"></input>
+    <image src="../../images/search.png"></image>
+  </view>
+  <view class="searchHistory">
+    <view class="searchTab">
+      <view class="searchTab-list">Resposition</view>
+      <view class="searchTab-list">User</view>
+    </view>
+    <swiper>
+      <swiper>
+        <swiper-item>
+
+        </swiper-item>
+      </swiper>
+    </swiper>
+  </view>
+</view>
+
+<view wx:if="{{ hasProjectInfo == true }}" class="projectList"> 
+  <view wx:for="{{ projectData }}" class="projectInfo">
+    <view class="ranking">
+      <text>{{ index }}</text>
+    </view>
+    <view class="info">
+      <view class="info-top">
+        <view class="info-top-left" data-full_name="{{ item.full_name }}" bindtap="toRepoPage">
+          <text class="proName">{{ item.full_name }}</text>
+          <!-- <text>{{ item.id }}</text> -->
+          <text class="proDes" wx:if="{{ item.description !== null}}">{{ item.description }}</text>
+          <text class="proDes" wx:else>暂无介绍信息</text>
+        </view>
+        <view class="info-top-right" data-login="{{ item.owner.login }}" bindtap="toOtherUserPage">
+          <image src="{{ item.owner.avatar_url }}"></image>
+          <text>{{ item.owner.login }}</text>
+        </view>
+      </view>
+      <view class="info-bottom">
+        <text >{{ item.language }}</text>
+        <text >{{ item.stargazers_count }}</text>
+        <!-- <text >{{  }}</text> -->
+      </view>
+    </view>
+  </view>
+</view>
+
+<text wx:else class="noData">
+  暂无数据, 请检查网络
+</text>

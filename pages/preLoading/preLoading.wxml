@@ -1,0 +1,15 @@
+<div id="container">
+  <div id="sun"></div>
+  <div class="orbit" id="earth-orbit">
+    <div class="globe" id="earth">
+      <div class="orbit" id="moon-orbit">
+        <div class="globe" id="moon"></div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<text class="text1">WELCOM</text>
+<text class="text2">TO</text>
+<text class="text3">GITHUB</text>
+<text class="text4">...LOADING...</text>

@@ -1,0 +1,96 @@
+<!--pages/my/my.wxml-->
+<block wx:if="{{ islogin == false }}">
+  <view class="login">
+    <image class="login-github" src="../../images/timg.jpg"></image>
+    <button bindtap="NavigateToLogin">Login</button>
+  </view>
+  <view class="bottomPanel">
+    <image src="../../images/lighthouse.jpg"></image>
+  </view>
+</block>
+
+<block wx:if="{{ islogin == true }}">
+  <view class="allInfo">
+    <view class="mainInfo">
+      <view class="userInfo">
+        <image alt="{{ userInfo.node_id }}" src="{{ userInfo.avatar_url }}"></image>
+        <view class="textInfo">
+          <a href="{{ userInfo.url }}">{{ userInfo.login }}</a>
+          <!-- <text>{{ userInfo.login }}</text> -->
+          <text>ID: {{ userInfo.id }}</text>
+          <!-- <text>NODE ID:{{ userInfo.node_id }}</text> -->
+        </view>
+      </view>
+      <view class="repoInfo">
+        <view bindtap="ToRepo">
+          <text>{{ userInfo.public_repos }}</text>
+          <text>Respositories</text>
+        </view>
+        <view data-type="followers" bindtap="ToOtherUserPage">
+          <text>{{ userInfo.followers }}</text>
+          <text>Followers</text>
+        </view>
+        <view data-type="following" bindtap="ToOtherUserPage">
+          <text>{{ userInfo.following }}</text>
+          <text>Following</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="otherInfo-1 otherInfo">
+        <view>
+          <image src="../../images/activity.png"></image>
+          <text>Activity</text>
+        </view>
+        <view>
+          <image src="../../images/issues-close.png"></image>
+          <text>Issues</text>
+        </view>
+    </view>
+
+    <view class="otherInfo-2 otherInfo">
+      <view bindtap="blogTap">
+        <image src="../../images/email.png"></image>
+        <text>Blog</text>
+      </view>
+      <view bindtap="emailTap">
+        <image src="../../images/email.png"></image>
+        <text>Email</text>
+      </view>
+      <view>
+        <image src="../../images/email.png"></image>
+        <text>Company</text>
+      </view>
+      <view>
+        <image src="../../images/email.png"></image>
+        <text>Location</text>
+      </view>
+    </view>
+
+    <view class="otherInfo-3 otherInfo">
+        <view bindtap="supportTap">
+          <image src="../../images/email.png"></image>
+          <text>Support</text>
+        </view>
+        <view bindtap="donateTap">
+          <image src="../../images/email.png"></image>
+          <text>Donate</text>
+        </view>
+        
+        <view>
+          <image src="../../images/email.png"></image>
+          <text>Feedback</text>
+        </view>
+        <view>
+          <image src="../../images/about.png"></image>
+          <text>About</text>
+        </view>
+    </view>
+    <modal title="捐助" confirm-text="捐助" cancel-text="狠心放弃" hidden="{{ donateModalHidden }}" bindconfirm="donateModalConfirm" bindcancel="donateModalCancel">
+      <image show-menu-by-longpress="true" src="../../images/collect.png"></image>
+      <text>你的支持是我最大的帮助</text>
+              
+    </modal>
+    <button class="logout" bindtap="logout">Logout</button>
+  </view>
+</block>

@@ -1,0 +1,15 @@
+<!--pages/repoListPage/repoListPage.wxml-->
+<view class="repoList">
+  <view bindtap="toRepoPage" data-full_name="{{ item.full_name }}" class="List" wx:key="{{ repoList.name }}" wx:for="{{ repoList }}">
+    <view class="repo-left" bindtap="toUserPage">
+      <image src="{{ item.owner.avatar_url }}"></image>
+    </view>
+    <view class="repo-right" bindtap="toRepoPage">
+      <text class="item-name">{{ item.name }}</text>
+      <text class="item-des">{{ item.description }}</text>
+      <view class="item-other">
+        
+      </view>
+    </view>
+  </view>
+</view>
