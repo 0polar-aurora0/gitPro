@@ -27,54 +27,60 @@
       </view>
     </view>
 
-    <view class="otherInfo-1 otherInfo">
-        <view>
-          <image src="../../images/email.png"></image>
+    <view class="info_piece_list">
+        <view class="info_piece">
+          <view class="imageIcon" style="background-color: rgb(57,133,250)">
+            <image src="../../images/activity.png"></image>
+          </view>
           <text>Activity</text>
         </view>
-        <view>
-          <image src="../../images/email.png"></image>
+        <view class="info_piece">
+          <view class="imageIcon" style="background-color: rgb(236,64,122)">
+            <image src="../../images/issue.png"></image>
+          </view>
           <text>Issues</text>
         </view>
     </view>
-
-    <view class="otherInfo-2 otherInfo">
-      <view bindtap="blogTap">
-        <image src="../../images/email.png"></image>
-        <text>Blog</text>
-      </view>
-      <view bindtap="emailTap">
-        <image src="../../images/email.png"></image>
-        <text>Email</text>
-      </view>
-      <view>
-        <image src="../../images/email.png"></image>
-        <text>Company</text>
-      </view>
-      <view>
-        <image src="../../images/email.png"></image>
-        <text>Location</text>
-      </view>
+    <view class="info_piece_list">
+      <view class="info_piece">
+          <view class="imageIcon" style="background-color: rgb(252,147,3)">
+            <image src="../../images/email.png"></image>
+          </view>
+          <text>Email</text>
+        </view>
+        <view class="info_piece">
+          <view class="imageIcon" style="background-color: rgb(64,159,254)">
+            <image src="../../images/blog.png"></image>
+          </view>
+          <text>Blog</text>
+        </view>
+        <view class="info_piece">
+          <view class="imageIcon" style="background-color: rgb(252,147,3)">
+            <image src="../../images/company.png"></image>
+          </view>
+          <text>Company</text>
+        </view>
+        <view class="info_piece">
+          <view class="imageIcon" style="background-color: rgb(39,101,217)">
+            <image src="../../images/location.png"></image>
+          </view>
+          <text>Location</text>
+        </view>
     </view>
-
-    <view class="otherInfo-3 otherInfo">
-        <view bindtap="supportTap">
-          <image src="../../images/email.png"></image>
-          <text>Support</text>
-        </view>
-        <view bindtap="donateTap">
-          <image src="../../images/email.png"></image>
-          <text>Donate</text>
-        </view>
-        
-        <view>
-          <image src="../../images/email.png"></image>
+    <view class="info_piece_list">
+        <view class="info_piece">
+          <view class="imageIcon" style="background-color: rgb(57,133,250)">
+            <image src="../../images/activity.png"></image>
+          </view>
           <text>Feedback</text>
         </view>
-        <view>
-          <image src="../../images/email.png"></image>
+        <view class="info_piece">
+          <view class="imageIcon" style="background-color: rgb(240,61,122)">
+            <image src="../../images/about.png"></image>
+          </view>
           <text>About</text>
         </view>
     </view>
+
   </view>
 </block>

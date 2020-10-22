@@ -4,14 +4,14 @@
 </view>
 <view class="search" style="top:{{ searchTop }}px">
   <view class="searchArea" style="height:{{ searchHeight }}px">
-    <input placeholder-class="placeholder" type="text" name="projectSeach" placeholder="Dream Starts Here"></input>
-    <image src="../../images/search.png"></image>
+    <input bindinput="getSearchValue" placeholder-class="placeholder" type="text" name="projectSeach" placeholder="Dream Starts Here"></input>
+    <image type='search' bindtap="goToSearch" src="../../images/search.png"></image>
   </view>
   <view class="searchHistory">
     <view class="searchTab">
-      <view class="searchTab-list">Resposition</view>
-      <view class="searchTab-list">User</view>
-    </view>
+      <view class="searchTab-list {{ searchType==true?'searchTab-block':'searchTab-none' }}">Resposition</view>
+      <view class="searchTab-list {{ searchType==true?'searchTab-none':'searchTab-block' }}" >User</view>
+    </view> 
     <swiper>
       <swiper>
         <swiper-item>
@@ -41,9 +41,10 @@
         </view>
       </view>
       <view class="info-bottom">
+        <view class="point" style="background-color: yellow" wx:if="{{ item.language == 'JavaScript' }}"></view>
+        <view class="point" style="background-color: green" wx:elif="{{ item.language == 'HTML' }}"></view><view class="point" style="background-color: blue" wx:else></view>
         <text >{{ item.language }}</text>
         <text >{{ item.stargazers_count }}</text>
-        <!-- <text >{{  }}</text> -->
       </view>
     </view>
   </view>

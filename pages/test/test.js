@@ -7,7 +7,43 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    info_list: 
+      [
+        [
+          {
+            "id": "1",
+            "name": "菜鸟教程",
+            "url": "www.runoob.com"
+          },
+          {
+            "id": "2",
+            "name": "菜鸟工具",
+            "url": "c.runoob.com"
+          },
+          {
+            "id": "3",
+            "name": "Google",
+            "url": "www.google.com"
+          }
+        ],
+        [
+          {
+            "id": "1",
+            "name": "菜鸟教程",
+            "url": "www.runoob.com"
+          },
+          {
+            "id": "2",
+            "name": "菜鸟工具",
+            "url": "c.runoob.com"
+          },
+          {
+            "id": "3",
+            "name": "Google",
+            "url": "www.google.com"
+          }
+        ]
+      ]
   },
 
   /**

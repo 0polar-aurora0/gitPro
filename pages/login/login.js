@@ -15,9 +15,11 @@ Page({
   dataRequest: function (e) {
   
     var that = this;
-
+    //本地服务器数据请求
     wx.request({
-      url: 'http://301t35260f.qicp.vip/', 
+      // url: 'http://301t35260f.qicp.vip/', 
+      url: 'https://30xj135260.imdo.co/', 
+      
       // timeout: 10,
       method:"POST",
       data: {
@@ -64,6 +66,26 @@ Page({
         }; 
       } 
     })
+
+    console.log(e.detail.value);
+
+    //github服务器登录
+    // wx.request({
+    //   url: 'https://api.github.com/user',
+    //   method:"GET",
+    //       raw_url: "https://api.github.com/user",
+    //       auth: {
+    //           "user": e.detail.value.credentials_username,
+    //           "password": e.detail.value.credentials_password
+    //       },
+      
+    //     header: {
+    //         'content-type': 'application/json' // 默认值
+    //     },
+    //     success: function(e) {
+    //       console.log(e);
+    //     }r
+    // })
   },
 
 
@@ -190,7 +212,8 @@ Page({
     console.log(e.detail.value);
     if (e.detail.value.access_token !== '' ) {
       wx.request({
-        url: 'http://301t35260f.qicp.vip/login', 
+        // url: 'http://301t35260f.qicp.vip/login', 
+        url: 'https://30xj135260.imdo.co/', 
         method:"POST",
         data: {
           form_data: e.detail.value
@@ -218,7 +241,8 @@ Page({
     console.log(e.detail.value);
     if (e.detail.value.client_id !== '' && e.detail.value.client_secret !== '') {
       wx.request({
-        url: 'http://301t35260f.qicp.vip/', 
+        // url: 'http://301t35260f.qicp.vip/', 
+        url: 'https://30xj135260.imdo.co/', 
         method:"POST",
         data: {
           form_data: e.detail.value

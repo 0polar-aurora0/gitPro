@@ -28,20 +28,21 @@ Page({
       header: {
         'content-type': 'application/json' // 默认值
       },
+      timeout: 1,
       success: function (res) {
         console.log("已获取服务器数据");
         console.log(res.data);
-        
+      },
+      fail: function(err) {
+        console.log(err);
+      },
+      complete: function() {
         setTimeout(() => {
           wx.reLaunch({
             url: '../index/index',
           });
-        }, 3000);
+        }, 100);
 
-       
-      },
-      fail: function(err) {
-        console.log(err);
       }
     });
     // wx.reLaunch({

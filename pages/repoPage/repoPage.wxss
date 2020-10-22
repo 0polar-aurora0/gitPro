@@ -41,13 +41,16 @@ page{
 .textInfo {
   margin-left: 10px;
   width: 70%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
 
-.textInfo text, .textInfo text {
+.textInfo text{
+  height: 100%;
   font-size: 14px;
+  overflow: scroll;
 }
 
 .textInfo :first-child {
@@ -71,10 +74,6 @@ page{
   /* background-color: aqua; */
 }
 
-.repoInfo :nth-child(2) {
-  border-left: rgb(244,244,244) solid 1px;
-  border-right: rgb(244,244,244) solid 1px;
-}
 
 .repoInfo>view {
   text-align: center;
@@ -87,37 +86,67 @@ page{
   justify-content: center;
 }
 
-.otherInfo {
+
+.info_piece_list {
   margin: 15px 0;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
+  height: auto;
+
 }
 
-.otherInfo-1 {
-  height: 140px;
-}
-
-.otherInfo-2 {
-  height: 140px;
-}
-
-
-.otherInfo>view {
+.info_piece {
+  margin: 0 auto;
   width: 100%;
-  height: 35px;
+  height: auto;
+  padding: 10px 0;
   background-color: white;
   border-bottom: 1px solid rgb(244,244,244);
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
   align-items: center;
 }
 
-.otherInfo>view>image {
-  width: 20px;
-  height: 20px;
-  margin: auto 10px;
+.skip {
+  flex-grow: 1;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }
 
+.skip image{
+  float: right;
+  width: 30px;
+  height: 30px;
+}
+
+.imageIcon {
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  margin: auto 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.imageIcon image {
+  width: 50%;
+  height: 50%;
+}
+
+.readme {
+  margin-top: 10px;
+  width: auto;
+  height: auto;
+  padding: 0 10px;
+}

@@ -21,6 +21,8 @@
           <!-- <text>NODE ID:{{ userInfo.node_id }}</text> -->
         </view>
       </view>
+
+
       <view class="repoInfo">
         <view bindtap="ToRepo">
           <text>{{ userInfo.public_repos }}</text>
@@ -37,55 +39,108 @@
       </view>
     </view>
 
-    <view class="otherInfo-1 otherInfo">
-        <view>
-          <image src="../../images/activity.png"></image>
-          <text>Activity</text>
-        </view>
-        <view>
-          <image src="../../images/issues-close.png"></image>
-          <text>Issues</text>
-        </view>
-    </view>
 
-    <view class="otherInfo-2 otherInfo">
-      <view bindtap="blogTap">
-        <image src="../../images/email.png"></image>
-        <text>Blog</text>
-      </view>
-      <view bindtap="emailTap">
-        <image src="../../images/email.png"></image>
-        <text>Email</text>
-      </view>
-      <view>
-        <image src="../../images/email.png"></image>
-        <text>Company</text>
-      </view>
-      <view>
-        <image src="../../images/email.png"></image>
-        <text>Location</text>
-      </view>
-    </view>
+    <view class="info_piece_list">
 
-    <view class="otherInfo-3 otherInfo">
-        <view bindtap="supportTap">
-          <image src="../../images/email.png"></image>
-          <text>Support</text>
-        </view>
-        <view bindtap="donateTap">
-          <image src="../../images/email.png"></image>
-          <text>Donate</text>
-        </view>
-        
-        <view>
-          <image src="../../images/email.png"></image>
-          <text>Feedback</text>
-        </view>
-        <view>
-          <image src="../../images/about.png"></image>
-          <text>About</text>
-        </view>
-    </view>
+       <view class="info_piece">
+         <view class="imageIcon" style="background-color: rgb(57,133,250)">
+           <image src="../../images/activity.png"></image>
+         </view>
+         <text>Activity</text>
+         <view class="skip">
+           <image src="../../images/skip.png"></image>
+         </view>
+       </view>
+       <view class="info_piece">
+         <view class="imageIcon" style="background-color: rgb(236,63,122)">
+           <image src="../../images/issue.png"></image>
+         </view>
+         <text>Issues</text>
+         <view class="skip">
+           <image src="../../images/skip.png"></image>
+         </view>
+       </view>
+   </view>
+
+   <view class="info_piece_list">
+
+       <view bindtap="blogTap" class="info_piece">
+         <view class="imageIcon" style="background-color: rgb(57,133,250)">
+           <image src="../../images/blog.png"></image>
+         </view>
+         <text>Blog</text>
+         <view class="skip">
+           <image src="../../images/skip.png"></image>
+         </view>
+       </view>
+       <view bindtap="emailTap" class="info_piece">
+         <view class="imageIcon" style="background-color: rgb(236,63,122)">
+           <image src="../../images/email.png"></image>
+         </view>
+         <text>Email</text>
+         <view class="skip">
+           <image src="../../images/skip.png"></image>
+         </view>
+       </view>
+       <view class="info_piece">
+         <view class="imageIcon" style="background-color: rgb(41,199,128)">
+           <image src="../../images/company.png"></image>
+         </view>
+         <text>Company</text>
+       </view>
+       <view bindtap="goToLocation" class="info_piece">
+         <view class="imageIcon" style="background-color: rgb(41,199,128)">
+           <image src="../../images/location.png"></image>
+         </view>
+         <text>Location</text>
+         <view class="skip">
+           <text wx:if="{{ location_address }}">{{ location_address }}</text>
+           <text wx:else>绑定地点</text>
+           <image src="../../images/skip.png"></image>
+         </view>
+       </view>
+   </view>
+
+   <view class="info_piece_list">
+       <view class="info_piece">
+         <view class="imageIcon" style="background-color: rgb(57,133,250)">
+           <image src="../../images/support.png"></image>
+         </view>
+         <text>Support</text>
+         <view class="skip">
+           <image src="../../images/skip.png"></image>
+         </view>
+       </view>
+       <view bindtap="donateTap" class="info_piece">
+         <view class="imageIcon" style="background-color: rgb(236,63,122)">
+           <image src="../../images/donate.png"></image>
+         </view>
+         <text>Donate</text>
+         <view class="skip">
+           <image src="../../images/skip.png"></image>
+         </view>
+       </view>
+       <view class="info_piece">
+         <view class="imageIcon" style="background-color: rgb(236,63,122)">
+           <image src="../../images/feedback.png"></image>
+         </view>
+         <text>Feedback</text>
+         <view class="skip">
+           <image src="../../images/skip.png"></image>
+         </view>
+       </view>
+       <view class="info_piece">
+         <view class="imageIcon" style="background-color: rgb(236,63,122)">
+           <image src="../../images/about.png"></image>
+         </view>
+         <text>About</text>
+         <view class="skip">
+           <image src="../../images/skip.png"></image>
+         </view>
+       </view>
+   </view>
+
+  
     <modal title="捐助" confirm-text="捐助" cancel-text="狠心放弃" hidden="{{ donateModalHidden }}" bindconfirm="donateModalConfirm" bindcancel="donateModalCancel">
       <image show-menu-by-longpress="true" src="../../images/collect.png"></image>
       <text>你的支持是我最大的帮助</text>

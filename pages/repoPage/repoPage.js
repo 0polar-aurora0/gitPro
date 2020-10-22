@@ -1,4 +1,7 @@
 // pages/repoPage/repoPage.js
+
+var base64 = require("../../utils/base64");
+
 Page({
 
   /**
@@ -6,13 +9,17 @@ Page({
    */
   data: {
     isRepoData: false,
-    repoData: null
+    repoData: null,
+    readme_data: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+
+    //请求主题数据
     wx.showLoading({
       title: '正在加载数据',
     })
@@ -55,6 +62,23 @@ Page({
             })
           },
         })  
+      }
+    });
+
+    //请求readme数据 
+    var readme_url = url + "/readme";
+    wx.request({
+      url: readme_url,
+      method: "GET",
+      success: function (e) {
+        console.log("数据获取成功");
+        console.log(e);
+        that.setData({
+         readme_data: base64.decode(e.data.content)
+        });
+      },
+      fail: function () {
+        console.log("数据获取失败");
       }
     });
 
@@ -115,9 +139,26 @@ Page({
     // })
   },
 
-  toWatchsPage: function() {
-    wx.request({
-      url: 'https://api.github.com/repos/' + this.data.repoData.full_name + 'watchers',
+  toWatchsPage: function(e) {
+    wx.navigateTo({
+      url: '../OtherUserListPage/OtherUserListPage?user=' + e.currentTarget.dataset.user + '&type=' + e.currentTarget.dataset
     })
-  }
+  },
+
+  goToFile: function(e) {
+    console.log(e);
+    console.log(e.currentTarget.dataset.fullname);
+    wx.navigateTo({
+      url: '../repoDirectory/repoDirectory?full_name=' + e.currentTarget.dataset.fullname,
+    })
+  },
+
+  goToOtherUserPage: function(e) {
+    console.log(e);
+    console.log(e.currentTarget.dataset.user);
+    wx.navigateTo({
+      url: '../OtherUserPage/OtherUserPage?user=' + e.currentTarget.dataset.user,
+    })
+  },
+  
 })

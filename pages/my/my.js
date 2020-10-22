@@ -10,6 +10,7 @@ Page({
     islogin: app.globalData.islogin,
     userInfo: {},
     donateModalHidden: true,
+    location_address: null
   },
 
   /** 
@@ -234,6 +235,37 @@ Page({
     console.log("ToRepo");
     wx.navigateTo({
       url: '../repoListPage/repoListPage?repos_url=' + this.data.userInfo.repos_url,
+    })
+  },
+
+  goToLocation: function(e) {
+    var that = this;
+    wx.getLocation({
+      type: 'wgs84',
+      altitude: 'false',
+      success: function(res) {
+        const latitude = res.latitude
+        const longitude = res.longitude
+        wx.openLocation({
+          latitude,
+          longitude,
+          scale: 18,
+          success: function(res) {
+            wx.chooseLocation({
+              latitude: 0,
+              success: function (res) {
+                console.log(res);
+                that.setData({
+                  location_address: res.address
+                })
+              }
+            })
+          }
+        })
+      },
+      fail: function(err) {
+        console.log(err)
+      }
     })
   }
 

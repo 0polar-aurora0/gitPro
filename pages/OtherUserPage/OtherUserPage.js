@@ -6,7 +6,7 @@ Page({
    */
   data: {
     userData: null,
-    isUserData: false
+    isUserData: false,
   },
 
   /**
@@ -19,6 +19,7 @@ Page({
     console.log(options);
     var that = this;
     var url = "https://api.github.com/users/" + options.user;
+    console.log(url);
     wx.request({
       url: url,
       method: "GET",

@@ -1,7 +1,4 @@
 <!--pages/test/test.wxml-->
 <view>
-  <text>This page is used to test</text>
-  <view>
-    <button class="bbb" bindtap="bbb">提交</button>
-  </view>
+  <pp info_list="{{ info_list }}"></pp>
 </view>

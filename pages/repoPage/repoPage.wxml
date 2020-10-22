@@ -3,14 +3,14 @@
   <view class="allInfo">
     <view class="mainInfo">
       <view class="userInfo">
-        <image alt="{{ repoData.owner.login }}" src="{{ repoData.owner.avatar_url }}"></image>
+        <image data-user="{{ repoData.owner.login }}" bindtap="goToOtherUserPage"></image>
         <view class="textInfo">
           <a href="{{ repoData.full_name }}">{{ repoData.full_name }}</a>
           <text> {{repoData.description}} </text>
         </view>
       </view>
       <view class="repoInfo">
-        <view bindtap="toWatchsPage">
+        <view data-user="{{ repoData.owner.login }}" data-type="subscriptions" bindtap="toWatchsPage">
           <text>{{ repoData.watchers }}</text>
           <text>Watches</text>
         </view>
@@ -25,40 +25,78 @@
       </view>
     </view>
 
-    <view class="otherInfo-1 otherInfo">
-        <view>
-          <image src="../../images/email.png"></image>
-          <text>{{  repoData.language }}</text>
+    <view class="info_piece_list">
+       
+        <view class="info_piece" bindtap="goToFile" data-fullname="{{ repoData.full_name }}">
+          <view class="imageIcon" style="background-color: rgb(236,64,122)">
+            <image src="../../images/codeType.png"></image>
+          </view>
+          <text>{{ repoData.language }}</text>
+          <view class="skip">
+            <text>{{ repoData.size }}B</text>
+            <image src="../../images/skip.png"></image>
+          </view>
+          
         </view>
-        <view>
-          <image src="../../images/email.png"></image>
+        <view class="info_piece">
+          <view class="imageIcon" style="background-color: rgb(57,133,250)">
+            <image src="../../images/activity.png"></image>
+          </view>
           <text>Activity</text>
+          <view class="skip">
+            <image src="../../images/skip.png"></image>
+          </view>
         </view>
-        <view>
-          <image src="../../images/email.png"></image>
+        <view class="info_piece">
+          <view class="imageIcon" style="background-color: rgb(236,63,122)">
+            <image src="../../images/issue.png"></image>
+          </view>
           <text>Issues</text>
+          <view class="skip">
+            <image src="../../images/skip.png"></image>
+          </view>
         </view>
-        <view>
-          <image src="../../images/email.png"></image>
+        <view class="info_piece">
+          <view class="imageIcon" style="background-color: rgb(41,199,128)">
+            <image src="../../images/license.png"></image>
+          </view>
           <text>License</text>
         </view>
     </view>
-
-    <view class="otherInfo-2 otherInfo">
-      <view>
-        <image src="../../images/email.png"></image>
-        <text>Commits</text>
-      </view>
-      <view >
-        <image src="../../images/email.png"></image>
-        <text>Contributors</text>
-      </view>
-      <view>
-        <image src="../../images/email.png"></image>
-        <text>Readme</text>
-      </view>
-      
+    <view class="info_piece_list">
+      <view class="info_piece">
+          <view class="imageIcon" style="background-color: rgb(252,147,3)">
+            <image src="../../images/email.png"></image>
+          </view>
+          <text>Commits</text>
+          <view class="skip">
+            <image src="../../images/skip.png"></image>
+          </view>
+        </view>
+        <view class="info_piece">
+          <view class="imageIcon" style="background-color: rgb(64,159,254)">
+            <image src="../../images/contributors.png"></image>
+          </view>
+          <text>Contributors</text>
+          <view class="skip">
+            <image src="../../images/skip.png"></image>
+          </view>
+        </view>
+        <view class="info_piece">
+          <view class="imageIcon" style="background-color: rgb(252,147,3)">
+            <image src="../../images/readme.png"></image>
+          </view>
+          <text>Readme</text>
+          <view class="skip">
+            <image src="../../images/refresh.png"></image>
+          </view>
+          <view class="readme">
+            <wemark wx:if="{{ readme_data }}" md="{{ readme_data }}" link highlight="true" type="wemark"></wemark>
+            <text wx:else>
+              请自己研究
+            </text>
+          </view>
+        </view>
     </view>
-
   </view>
 </block>

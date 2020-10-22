@@ -52,6 +52,7 @@ App({
         console.log(e.data.serverNumber);
         console.log(e.data.serverInformation);
         getApp().globalData.islogin = e.data.serverStatus;
+        getApp().globalData.login = e.data.login
       },
       fail: function( e ) {
         console.log("暂无缓存");

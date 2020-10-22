@@ -9,7 +9,9 @@ Page({
     hasProjectInfo: false,
     projectData: null,
     searchTop: app.globalData.searchTop,
-    searchHeight: app.globalData.searchHeight
+    searchHeight: app.globalData.searchHeight,
+    searchValue: null,
+    searchType: true
   },
   //logs日志
   bindViewTap: function() {
@@ -112,6 +114,18 @@ Page({
     wx.navigateTo({
       url: '../repoPage/repoPage?full_name=' + full_name
     })
-  }
+  },
 
+  getSearchValue: function(e) {
+    this.searchValue = e.detail.value;
+    console.log(e.detail.value);
+  },
+
+
+
+  goToSearch: function(e) {
+    console.log(this.searchValue)
+    
+  }
+  
 })

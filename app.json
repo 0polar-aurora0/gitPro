@@ -6,16 +6,23 @@
     "pages/my/my",
     "pages/login/login",
     "pages/test/test",
-    "pages/web_view/web_view",
     "pages/OtherUserPage/OtherUserPage",
     "pages/OtherUserListPage/OtherUserListPage",
     "pages/repoPage/repoPage",
-    "pages/repoListPage/repoListPage"
+    "pages/repoListPage/repoListPage",
+    "pages/repoDirectory/repoDirectory",
+    "pages/repoDocument/repoDocument",
+    "pages/starred/starred"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示" 
+    }
+  },
   "window":{
     
     "backgroundTextStyle":"dark",
-    "navigationBarBackgroundColor": "#1F0510",
+    "navigationBarBackgroundColor": "#017F46",
     "navigationBarTitleText": "GitHub",
     "navigationBarTextStyle":"white"
   },
@@ -32,7 +39,7 @@
       "selectedIconPath": "images/trending_select.png"
     },
     {
-      "pagePath": "pages/test/test",
+      "pagePath": "pages/starred/starred",
       "text": "starred",
       "iconPath": "images/starred.png",
       "selectedIconPath": "images/starred_select.png"
