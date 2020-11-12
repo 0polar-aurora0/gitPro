@@ -1,0 +1,8 @@
+
+<view wx:for="{{ info_list }}" class="info_piece_list">
+  <view wx:for="{{ item }}" class="info_piece">
+    <image src="{{ item.image }}"></image>
+    <text class="text_title">{{ item.text_title }}</text>
+    <text class="text_info">{{ item.text_info }}</text>
+  </view>
+</view>

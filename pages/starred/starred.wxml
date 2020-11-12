@@ -1,0 +1,17 @@
+<!--pages/starred/starred.wxml-->
+<view class="repoList">
+  <view bindtap="toRepoPage" data-full_name="{{ item.full_name }}" class="List" wx:key="{{ repoList.name }}" wx:for="{{ starred_url }}">
+    <view class="repo-left" bindtap="toUserPage">
+      <image src="{{ item.owner.avatar_url }}"></image>
+    </view>
+    <view class="repo-right" >
+      <text class="item-name">{{ item.name }}</text>
+      <text class="item-des">{{ item.description }}</text>
+      <view class="item-other">
+          <text wx:if="{{item.language}}">{{ item.language }}</text>
+          <text>{{ item.created_at }}</text>
+          <text>{{ item.default_branch }}</text>
+      </view>
+    </view>
+  </view>
+</view>

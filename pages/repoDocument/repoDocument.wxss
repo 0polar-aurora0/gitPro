@@ -1,0 +1,5 @@
+/* pages/repoDocument/repoDocument.wxss */
+.allPage {
+  padding: 0 5px;
+  height: auto;
+}

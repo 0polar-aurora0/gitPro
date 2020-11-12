@@ -1,0 +1,64 @@
+/* pages/starred/starred.wxss */
+Page {
+  background-color: rgb(244, 244, 244);
+}
+
+.repoList {
+  width: 100%;
+  height: 100%;
+}
+
+.List {
+  margin: 20px 0;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.repo-left {
+  width: 20%;
+  height: 100%;
+}
+
+.repo-left image {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 40px;
+  width: 40px;
+}
+
+.repo-right {
+  overflow: scroll;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.repo-right .item-name {
+  color: blue;
+  font-size: 13px;
+}
+
+.repo-right .item-des {
+  color: gray;
+  font-size: 14px;
+}
+
+.repo-right .item-other {
+  margin-left: 5px;
+  margin-top: 5px;
+  width: 100%;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 12px;
+  flex-wrap: wrap;
+}

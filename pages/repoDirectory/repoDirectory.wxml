@@ -1,0 +1,11 @@
+<!--pages/repoDirectory/repoDirectory.wxml-->
+<view class="directList">
+  <view wx:for="{{ repoDirectoryData }}" class="direct" bindtap="openFolder" data-type="{{ item.type }}" data-url="{{ item.url }}">
+    <view class="direct-title">
+      <image wx:if="{{ item.type == 'tree' }}" src="../../images/tree.png" ></image>
+      <image wx:elif="{{ item.type == 'blob' }}" src="../../images/blob.png" ></image>
+      <text>{{ item.path }}</text>
+    </view>
+    <text>{{ item.size }}B</text>
+  </view>
+</view>

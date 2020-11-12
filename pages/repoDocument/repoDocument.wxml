@@ -1,0 +1,5 @@
+<!--pages/repoDocument/repoDocument.wxml-->
+<view class="allPage">
+  <wemark md="{{ repoDocumentData }}" link highlight type="wemark"></wemark>
+</view>
+
